@@ -1,0 +1,8 @@
+/* Legacy background base; the school palette is applied by voice-page.css. */
+body,
+.header {
+  background-color: #f4f2ed;
+}
+
+/* The school quote is now continuously visible. Typography and layout are
+   defined in school-pages.css; no quote animations or delayed states remain. */

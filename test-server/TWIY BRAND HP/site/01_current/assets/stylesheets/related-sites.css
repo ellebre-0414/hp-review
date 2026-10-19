@@ -1,0 +1,41 @@
+/* Equal-level navigation shared by the adopted school and apparel pages. */
+.twiy-related-sites {
+  box-sizing: border-box;
+  width: min(90%, 1160px);
+  margin: 48px auto 32px;
+  padding: 26px 0;
+  border-top: 1px solid #cbd5de;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.7;
+}
+.twiy-related-sites__label { font-size: 11px; letter-spacing: .16em; color: #526878; }
+.twiy-related-sites__links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.twiy-related-sites__links a {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 56px;
+  padding: 14px 0;
+  border-bottom: 1px solid #a7b9c7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #233b4f;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.twiy-related-sites__links a:hover { color: #41617d; border-bottom-color: #41617d; }
+.twiy-related-sites__links a:focus-visible { outline: 2px solid #41617d; outline-offset: 5px; }
+.twiy-related-sites__links a span { flex-shrink: 0; font-size: 20px; font-weight: 400; }
+@media (max-width: 900px) {
+  .twiy-related-sites { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+@media (max-width: 640px) {
+  .twiy-related-sites { width: calc(100% - 48px); margin-top: 36px; padding-top: 22px; }
+  .twiy-related-sites__links { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}

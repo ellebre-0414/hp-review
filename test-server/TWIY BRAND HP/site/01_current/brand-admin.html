@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>ブランド管理 | TWIY</title>
+<link rel="stylesheet" href="assets/stylesheets/style.css"><link rel="stylesheet" href="assets/stylesheets/brand.css"><link rel="stylesheet" href="assets/stylesheets/brand-pages.css"><link rel="stylesheet" href="assets/stylesheets/brand-admin.css"></head>
+<body class="brand-page admin-page">
+<header class="admin-header"><a href="brand.html"><img src="assets/images/logo1.png" alt="TWIY"></a><span>CONTENT STUDIO <small>LOCAL TEST</small></span></header>
+<main class="admin-shell">
+<div class="admin-intro"><p class="brand-kicker">TWIY / EDITOR</p><h1>ブランドを、整える。</h1><p>文章・商品写真・ブログを、このブラウザーで編集します。</p></div>
+<aside class="admin-notice"><strong>PC内のテスト専用です。</strong> 保存内容は同じブラウザー・同じ開き方でのみ反映され、HTML原本や公開サイトは書き換えません。写真はブラウザー内に保存します。別端末への共有・本番の認証は未接続です。テスト用パスワードは実際のアクセス制限にはなりません。個人情報や機密情報は登録しないでください。</aside>
+<section id="admin-login"><form id="login-form"><label for="admin-password">テスト用パスワード</label><div class="login-row"><input id="admin-password" type="password" autocomplete="current-password" required><button type="submit">編集画面を開く →</button></div><p class="admin-help">パスワード：<code>TWIY</code>（半角・大文字）</p></form></section>
+<p id="admin-message" role="status" aria-live="polite"></p>
+<section id="admin-workspace" hidden>
+  <div class="admin-toolbar"><p id="save-state">保存済み</p><div><button id="discard" type="button">未保存の変更を取り消す</button><button id="logout" type="button">ログアウト</button></div></div>
+  <nav class="admin-tabs" aria-label="編集するページ">
+    <button type="button" data-tab="common" aria-pressed="true">共通</button><button type="button" data-tab="home" aria-pressed="false">トップ</button><button type="button" data-tab="collection" aria-pressed="false">コレクション</button><button type="button" data-tab="blog" aria-pressed="false">ブログ</button><button type="button" data-tab="checkout" aria-pressed="false">購入ページ</button>
+  </nav>
+  <form id="editor-form"><div id="editor-body"></div><div class="admin-savebar"><p>保存後、各ページを開き直して確認できます。</p><button id="save-content" type="submit">このブラウザーに保存 →</button></div></form>
+  <section class="admin-preview"><h2>保存したページを確認</h2><nav><a href="brand.html" target="_blank" rel="noopener">トップ ↗</a><a href="collection.html" target="_blank" rel="noopener">コレクション ↗</a><a href="blog.html" target="_blank" rel="noopener">ブログ ↗</a><a href="checkout.html" target="_blank" rel="noopener">購入ページ ↗</a></nav></section>
+  <section class="admin-backup"><h2>バックアップ</h2><p>ブラウザーのデータを削除すると編集内容も失われます。必要に応じて、写真を含む保存済みデータを書き出してください。</p><button id="export-content" type="button">保存済みデータを書き出す</button><button id="import-content" type="button">バックアップを読み込む</button><input id="backup-file" type="file" accept=".json,application/json" hidden><p class="admin-help">読み込み後はまだ未保存です。内容を確認して保存すると反映されます。写真はJPEG・PNG・WebPに対応し、編集画面への登録時に最大1600pxに縮小します。</p></section>
+</section></main>
+<noscript><p class="admin-shell">編集にはJavaScriptを有効にしてください。</p></noscript>
+<script src="assets/js/brand-model.js"></script><script src="assets/js/brand-storage.js"></script><script src="assets/js/brand-data.js"></script><script src="assets/js/brand-admin.js"></script>
+</body></html>

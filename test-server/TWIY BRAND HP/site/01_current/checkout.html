@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TWIY Tシャツ購入ページ">
+  <title>TWIY | Purchase</title>
+  <link rel="stylesheet" href="assets/stylesheets/style.css">
+  <link rel="stylesheet" href="assets/stylesheets/checkout.css">
+  <link rel="stylesheet" href="assets/stylesheets/brand-pages.css">
+  <link rel="stylesheet" href="assets/stylesheets/related-sites.css">
+</head>
+<body class="checkout-page checkout-current" data-brand-page="checkout">
+  <header class="checkout-header">
+    <a href="brand.html" class="checkout-logo" aria-label="ブランドページへ戻る"><img src="assets/images/logo1.png" alt="TWIY" data-image="common.logo"></a>
+    <nav class="brand-mini-nav" aria-label="ブランドのメニュー"><a href="brand.html" data-copy="common.homeLink">HOME</a><a href="collection.html" data-copy="common.collectionLink">COLLECTION</a><a href="blog.html" data-copy="common.blogLink">BLOG</a></nav>
+  </header>
+  <p id="brand-load-status" class="brand-status brand-shell" role="status" hidden></p>
+  <main>
+    <section class="checkout-intro">
+      <p class="checkout-kicker" data-copy="checkout.eyebrow">TWIY / ORDER</p>
+      <h1 data-copy="checkout.title">Purchase</h1>
+      <div class="checkout-guide">
+        <p data-copy="checkout.guide1">必要事項入力の上、ご購入確認ボタンを押して下さい。お支払い方法は振込、または代引きとなります。</p>
+        <p data-copy="checkout.guide2">お振込みを選択の方は後ほど、お振込み先のご案内を、ご入力いただいたメールアドレス、または、電話番号へショートメッセージにてお送りいたします。</p>
+      </div>
+    </section>
+    <p class="checkout-prototype-note">テスト用の購入確認ページです。入力内容は送信されず、注文の確定・決済は行われません。</p>
+    <section class="checkout-layout">
+      <aside class="checkout-visual">
+        <img src="assets/images/tshirt-black-back.webp" alt="参考写真：Tシャツ着用イメージ">
+        <p data-copy="checkout.caption">TWIY / T-SHIRTS</p>
+      </aside>
+      <div class="checkout-panel">
+        <form id="purchase-form" class="checkout-form">
+          <div class="checkout-field">
+            <label for="customer-name"><span data-copy="checkout.nameLabel">氏名</span> <span>必須</span></label>
+            <input id="customer-name" name="customer-name" type="text" autocomplete="name" required>
+          </div>
+          <div class="checkout-field">
+            <label for="postal-code"><span data-copy="checkout.postalLabel">郵便番号</span> <span>必須</span></label>
+            <input id="postal-code" name="postal-code" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="000-0000" required>
+          </div>
+          <div class="checkout-field">
+            <label for="address"><span data-copy="checkout.addressLabel">配送先住所</span> <span>必須</span></label>
+            <textarea id="address" name="address" rows="3" autocomplete="street-address" required></textarea>
+          </div>
+          <fieldset class="checkout-contact">
+            <legend><span data-copy="checkout.contactLabel">メールアドレス、または電話番号</span> <span>いずれか必須</span></legend>
+            <div class="checkout-field"><label for="email"><span data-copy="checkout.emailLabel">メールアドレス</span></label><input id="email" name="email" type="email" autocomplete="email"></div>
+            <div class="checkout-or">OR</div>
+            <div class="checkout-field"><label for="phone"><span data-copy="checkout.phoneLabel">電話番号</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+            <p id="contact-error" class="checkout-error" role="alert"></p>
+          </fieldset>
+          <div class="checkout-row">
+            <div class="checkout-field">
+              <label for="product"><span data-copy="checkout.productLabel">購入商品</span> <span>必須</span></label>
+              <select id="product" name="product" required>
+                <option value="">商品を選択</option>
+                <option value="tee-01">T-SHIRT 01 / WHITE</option>
+                <option value="tee-02">T-SHIRT 02 / WHITE</option>
+                <option value="tee-03">T-SHIRT 03 / BLACK</option>
+              </select>
+            </div>
+            <div class="checkout-field">
+              <label for="quantity"><span data-copy="checkout.quantityLabel">購入枚数</span> <span>必須</span></label>
+              <select id="quantity" name="quantity" required>
+                <option value="">枚数</option>
+                <option value="1">1枚</option><option value="2">2枚</option><option value="3">3枚</option>
+                <option value="4">4枚</option><option value="5">5枚</option><option value="6">6枚</option>
+                <option value="7">7枚</option><option value="8">8枚</option><option value="9">9枚</option><option value="10">10枚</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="checkout-payment">
+            <legend><span data-copy="checkout.paymentLabel">支払い方法</span> <span>必須</span></legend>
+            <label><input type="radio" name="payment" value="お振込み" required><span>① お振込み</span></label>
+            <label><input type="radio" name="payment" value="代引き"><span>② 代引き</span></label>
+          </fieldset>
+          <button type="submit" class="checkout-submit" disabled><span data-copy="checkout.confirmLabel">ご購入確認</span> <span>→</span></button>
+        </form>
+        <section id="order-review" class="checkout-review" hidden aria-live="polite">
+          <p class="checkout-kicker">ORDER REVIEW</p>
+          <h2 data-copy="checkout.reviewTitle">入力内容の確認</h2>
+          <dl id="review-list"></dl>
+          <p class="checkout-review__note">現在は確認画面です。入力内容はまだ送信されていません。</p>
+          <button type="button" id="edit-order" class="checkout-edit" data-copy="checkout.editLabel">入力内容を修正する</button>
+        </section>
+      </div>
+    </section>
+  </main>
+<nav class="twiy-related-sites" aria-label="TWIYの関連サイト">
+  <span class="twiy-related-sites__label">TWIY LINKS</span>
+  <div class="twiy-related-sites__links">
+    <a href="index.html">TWIY塾 <span aria-hidden="true">↗</span></a>
+    <a href="../../../TWIY LEGAL OFFICE/index.html">TWIY法律事務所 <span aria-hidden="true">↗</span></a>
+  </div>
+</nav>
+  <footer class="checkout-footer"><span data-copy="common.copyright">© TWIY</span><a href="brand-admin.html" data-copy="common.adminLink">管理者ページ</a><span data-copy="common.footerLine">THE WORLD IS YOURS</span></footer>
+  <script src="assets/js/brand-model.js"></script>
+<script src="assets/js/brand-storage.js"></script>
+<script src="assets/js/brand-data.js"></script>
+<script src="assets/js/brand-view.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
